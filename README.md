@@ -4,9 +4,11 @@ Unofficial OpenAPI specification for the Skylight Calendar API, reverse-engineer
 
 ## Quick Links
 
-- [View API Docs (Swagger UI)](docs/swagger.html)
-- [View API Docs (ReDoc)](docs/redoc.html)
-- [OpenAPI Spec (YAML)](docs/openapi/openapi.yaml)
+| | Live Docs | Raw Files |
+|---|-----------|-----------|
+| **Swagger UI** | [theeaglebyte.github.io](https://theeaglebyte.github.io/skylight-api/swagger.html) | [docs/swagger.html](docs/swagger.html) |
+| **ReDoc** | [theeaglebyte.github.io](https://theeaglebyte.github.io/skylight-api/redoc.html) | [docs/redoc.html](docs/redoc.html) |
+| **OpenAPI Spec** | [theeaglebyte.github.io](https://theeaglebyte.github.io/skylight-api/openapi/openapi.yaml) | [docs/openapi/openapi.yaml](docs/openapi/openapi.yaml) |
 
 ## API Endpoints
 
