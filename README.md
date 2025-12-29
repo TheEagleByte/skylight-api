@@ -1,8 +1,38 @@
-# Skylight API - HAR to OpenAPI Converter
+# Skylight API
 
-Convert HAR files (exported from browser DevTools) into an OpenAPI specification for the Skylight API.
+Unofficial OpenAPI specification for the Skylight Calendar API, reverse-engineered from network traffic.
 
-## Features
+## Quick Links
+
+- [View API Docs (Swagger UI)](docs/swagger.html)
+- [View API Docs (ReDoc)](docs/redoc.html)
+- [OpenAPI Spec (YAML)](docs/openapi/openapi.yaml)
+
+## API Endpoints
+
+The spec currently documents **38 endpoints** including:
+
+| Category | Endpoints |
+|----------|-----------|
+| **Frames** | Get frame details |
+| **Chores** | List, create, update chores |
+| **Categories** | Manage categories and family members |
+| **Lists** | Shopping lists, to-do lists, list items |
+| **Meals** | Recipes, meal sittings, grocery integration |
+| **Calendar** | Calendar events, notifications |
+| **Messages** | Messages, comments, likes |
+| **Rewards** | Reward points, redemption |
+| **Task Box** | Quick task items |
+
+Base URL: `https://app.ourskylight.com`
+
+---
+
+## HAR to OpenAPI Converter
+
+This repository includes a CLI tool to generate/update the OpenAPI spec from HAR files exported from browser DevTools.
+
+### Features
 
 - **HAR Parsing**: Load and merge multiple HAR files
 - **Smart Filtering**: Extract only Skylight API requests (`https://app.ourskylight.com/api/*`)
@@ -11,15 +41,15 @@ Convert HAR files (exported from browser DevTools) into an OpenAPI specification
 - **Schema Inference**: Infer JSON schemas from observed response bodies
 - **Static Documentation**: Generate Swagger UI and ReDoc HTML viewers
 
-## Installation
+### Installation
 
 ```bash
 npm install
 ```
 
-## Usage
+### Usage
 
-### 1. Export HAR from Browser
+#### 1. Export HAR from Browser
 
 1. Open the Skylight web app in Chrome/Firefox
 2. Open DevTools (F12) → Network tab
@@ -27,7 +57,7 @@ npm install
 4. Right-click in the Network tab → "Save all as HAR with content"
 5. Save the HAR file to the `har/` directory
 
-### 2. Convert to OpenAPI
+#### 2. Convert to OpenAPI
 
 ```bash
 # Convert a single HAR file
@@ -40,7 +70,7 @@ npm run convert -- "./har/*.har"
 npm run convert -- "./har/*.har" -o ./docs -v "1.0.0"
 ```
 
-### 3. View Documentation
+#### 3. View Documentation
 
 ```bash
 # Serve the docs locally
@@ -49,7 +79,7 @@ npx serve ./docs
 # Open http://localhost:3000
 ```
 
-## CLI Options
+### CLI Options
 
 ```
 Usage: skylight-har2openapi convert [options] <har-files...>
@@ -70,7 +100,7 @@ Options:
   -h, --help             Display help
 ```
 
-## Output Structure
+### Output Structure
 
 ```
 docs/
@@ -81,7 +111,7 @@ docs/
     └── openapi.yaml     # Generated OpenAPI spec
 ```
 
-## Redaction
+### Redaction
 
 The tool automatically redacts:
 
@@ -96,16 +126,16 @@ To skip redaction (for local testing only):
 npm run convert -- ./har/*.har --no-redact
 ```
 
-## API Reference
+### Spec Format
 
-The generated spec follows the patterns from the [skylight-api-old](../skylight-api-old/) reference:
+The generated spec follows JSON:API patterns:
 
 - OpenAPI 3.0.3 format
 - JSON:API resource patterns (`type`, `id`, `attributes`, `relationships`)
 - Bearer and Basic authentication schemes
 - Tags organized by resource type (Frames, Chores, Lists, etc.)
 
-## Development
+### Development
 
 ```bash
 # Type check
