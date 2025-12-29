@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skylight API Documentation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      max-width: 600px;
+      width: 90%;
+    }
+    h1 {
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .subtitle {
+      color: #718096;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .swagger { background: #85ea2d; color: #173647; }
+    .swagger:hover { background: #6bc62d; }
+    .redoc { background: #32329f; color: white; }
+    .redoc:hover { background: #28287f; }
+    .spec { background: #e2e8f0; color: #475569; }
+    .spec:hover { background: #cbd5e1; }
+    .footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">Unofficial</span>
+    <h1>Skylight API</h1>
+    <p class="subtitle">Community-maintained API reference</p>
+    <div class="links">
+      <a href="swagger.html" class="swagger">Swagger UI</a>
+      <a href="redoc.html" class="redoc">ReDoc</a>
+      <a href="./openapi/openapi.yaml" class="spec">OpenAPI Spec</a>
+    </div>
+    <p class="footer">
+      Generated from HAR files. For research and interoperability purposes only.
+    </p>
+  </div>
+</body>
+</html>

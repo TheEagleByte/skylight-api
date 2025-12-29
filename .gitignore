@@ -8,8 +8,6 @@ dist/
 /har/
 *.har
 
-# Generated docs (can be regenerated)
-/docs/
 
 # Environment
 .env
