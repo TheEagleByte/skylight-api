@@ -150,6 +150,47 @@ npm run build
 npm run dev -- convert ./har/*.har
 ```
 
+## Used By
+
+This API documentation powers the [skylight-mcp](https://github.com/TheEagleByte/skylight-mcp) project — an MCP (Model Context Protocol) server that enables AI assistants like Claude to interact with your Skylight family calendar.
+
+With skylight-mcp, you can ask your AI assistant things like:
+- "What's on my calendar today?"
+- "Add 'take out trash' to my chores"
+- "What's on the grocery list?"
+
+## Contributing
+
+Contributions are welcome! Here's how you can help expand the API documentation:
+
+### Adding New Endpoints
+
+1. **Capture HAR traffic** from the Skylight web app (see [Usage](#usage))
+2. **Run the converter** to update the OpenAPI spec
+3. **Verify** the new endpoints appear correctly in the generated docs
+4. **Open a pull request** with your updated HAR file and generated spec
+
+### Development Setup
+
+```bash
+git clone https://github.com/TheEagleByte/skylight-api.git
+cd skylight-api
+npm install
+npm run build
+```
+
+### Guidelines
+
+- Always redact sensitive data before committing HAR files
+- Test that generated documentation renders correctly
+- Include clear descriptions for new endpoints when possible
+
+## Issues & Support
+
+- **Missing endpoints**: [Open an issue](https://github.com/TheEagleByte/skylight-api/issues/new) describing the API functionality you'd like documented
+- **Incorrect schemas**: [Open an issue](https://github.com/TheEagleByte/skylight-api/issues/new) with details about what's wrong
+- **Questions**: [Start a discussion](https://github.com/TheEagleByte/skylight-api/discussions) or open an issue
+
 ## License
 
 MIT
